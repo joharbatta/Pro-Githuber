@@ -6,29 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="/css/style.css">
-    <link href="https://bootswatch.com/4/simplex/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="/css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
+	<link href="https://bootswatch.com/4/simplex/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-	<nav class="navbar navbar-expand-lg navbar-dark ">
+<body oncontextmenu="return false">
+	<nav class="navbar">
     
 		<a class="navbar-brand" href="#">PRO GITHUBER</a>
 		 
 	   </nav>
 
+	   <script type="text/javascript" src="typed.js"></script>
+	   <div class="" id="con">
+		    <h2 class="type"></h2>
+                                      <script>
+                                     var typed=new Typed(".type",{
+                                      strings: [
+                                        "STALK GITHUB USERS",
+										"STALK GITHUB USERS",
+										"STALK GITHUB USERS",
+										"STALK GITHUB USERS",
+										"STALK GITHUB USERS"
+                                        ,
+                                      ],
+                                      // smartBackspace:false,
+                                      typeSpeed:50,
+                                      backSpeed:50,
+                                      loop:true,
 
-	   <div class="searchContainer">
-		<h1>Search Github Users</h1>
+                                    })
+                                     </script>
+		
 		<p class="lead">Enter a username to fetch all you need!</p>
-		<input type="text" id="searchUser" class="form-control" placeholder="Github Username...">
-		<input type="button" id="searchB" value="SEARCH" onclick="execute()">
+		<!-- <input type="text" id="searchUser" class="searchbar" placeholder="Github Username...">
+		<input type="button" id="searchB" value="SEARCH" onclick="execute()"> -->
+		<div class="example" style="margin:auto;max-width:300px">
+			<input type="text" id="searchUser" class="searchbar" placeholder="Search.." name="search2">
+			<button type="submit" id="searchB" value="SEARCH" onclick="execute()"><i class="fa fa-search"></i></button>
+		  </div>
+		
 	  </div>
 
 	  <div class="card">
 		<div class="card-header">
 			<h3 class="card-title" id="title">${user.name}</h3>
 		</div>
-		<div class="card-body">
+		<div class="card-body ">
 			<div class="row">
 				<div class="">
 					<img class="thumbnail avatar" id="dp" src="${user.avatar_url}">
@@ -82,10 +107,11 @@
 
 		<!-- Modal content -->
 		<div class="modal-content">
+				
 			<div class="modal-header">
 			
-			<span class="close">&times;</span>
-			<h2>Followers</h2>
+				<h1 id="mhead"> FOLLOWERS  <span class="close">&times;</span> </h1>	
+			
 			</div>
 			<table id="table2" style="border: 2px solid #c6c6c6; text-align: center;">
 				<tr>
@@ -95,10 +121,8 @@
 					<th>Type</th>
 					<th>Url</th>
 				</tr>
-			</table>
-			
+			</table>	
 		</div>
-
 		</div>
 
 <script type="text/javascript" src="script.js"></script>

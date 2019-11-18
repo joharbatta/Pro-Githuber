@@ -1,15 +1,24 @@
 .navbar-brand {
     margin-left: 50%;
-    font-size: 185%;
+    color: #fefefe;
+    
 }
 .navbar
 {
     background-color:#007BFF;
+    position: fixed;
 
 
 }
-.searchContainer
+.lead 
 {
+  text-align: center;
+}
+
+.searchbar
+{
+  width: 50%;
+  align-items: center;
   
 }
 .h1
@@ -24,6 +33,23 @@
 {
     background-color:#007BFF;
 }
+.badges
+{
+  margin-left: 1.5em;
+}
+.list-group
+{
+  margin-left: 2em;
+}
+.type
+{
+  display: inline;
+  color:red;
+  font-size: 100%;
+  /* margin-left: 30%; */
+  
+  
+}
 #dp
 {
     width:300px; 
@@ -37,19 +63,31 @@
 }
 .card-header
 {
+  margin-top: 2em;
     text-transform: uppercase;
     text-align: center;
 }
+#con
+{
+margin-right:30%;
+ margin-top:5px;
+}
 
 .modal{
-    display: none; /* Hidden by default */
-    /* position: relative; Stay in place */
-    z-index: 1; /* Sit on top */
-    width: 60%; /* Full width */
-    height: 70%; /* Full height */
-    overflow: scroll; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  background-color: rgba(0,0,0,0.8); 
+  margin-top: 10%;
+  margin-bottom: 10%;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+  overflow-y: auto;
+  transition: 0.5s;
+  display: none;
+ 
+    /* Enable scroll if needed */
+   
+  /* Black w/ opacity */
   }
   
   /* Modal Content */
@@ -58,16 +96,21 @@
     background-color: #fefefe;
     margin: auto;
     padding: 0;
+    
     border: 1px solid #888;
-    width: 50%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+   
     -webkit-animation-name: animatetop;
     -webkit-animation-duration: 0.4s;
     animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-duration: 0.4s;
+    overflow-y: auto;
+    width: 250px;
+    height: 500px;
+  
+    
   }
   
-  /* Add Animation */
+   Add Animation
   @-webkit-keyframes animatetop {
     from {top:-300px; opacity:0} 
     to {top:0; opacity:1}
@@ -77,24 +120,54 @@
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
   }
-  
+   
   /* The Close Button */
   .close {
-    color: white;
     float: right;
-    font-size: 28px;
+    color: white;
+    font-size: 88px;
     font-weight: bold;
   }
   
   .close:hover,
   .close:focus {
+   
     color: #000;
     text-decoration: none;
     cursor: pointer;
   }
-  .modal-header {
-   margin-right: 50%;
-    padding: 2px 16px;
-    background-color: #5cb85c;
+  h1{
+    text-align: center;
+  }
+
+  div.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid grey;
+    float: left;
+    width: 300%;
+    background: #f1f1f1;
+  }
+  
+  div.example button {
+   
+    float: right;
+    width: 80%;
+    padding: 10px;
+    background: #2196F3;
     color: white;
+    font-size: 17px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+  }
+  
+  div.example button:hover {
+    background: #0b7dda;
+  }
+  
+  div.example::after {
+    content: "";
+    clear: both;
+    display: table;
   }
