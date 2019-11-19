@@ -5,6 +5,12 @@ function execute()
 	var table = document.getElementById('table');
 	var table1 = document.getElementById('table1');
 	var table2 = document.getElementById('table2');
+	var table3 = document.getElementById('table3');
+	var tablefl = document.getElementById('tablefl');
+	document.getElementById("table2").innerHTML = "";
+	document.getElementById("table3").innerHTML = "";
+	document.getElementById("tablefl").innerHTML = "";
+	document.getElementById("table1").innerHTML = "";
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET","https://api.github.com/users/"+user,true);
 	xhr.onload = function() {
@@ -20,6 +26,8 @@ function execute()
  }
 	xhr.send();
 
+
+	//followers 
 	var xhr1 = new XMLHttpRequest();
 	xhr1.open("GET","https://api.github.com/users/"+user+"/followers",true);
 	xhr1.onload = function() {
@@ -37,11 +45,15 @@ function execute()
 
 	function followerslist(list)
 	{
+		var tr = document.createElement('tr');
 		var tr1 = document.createElement('tr');
-
+		var th=document.createElement('th');
+		th.innerHTML="PHOTO";
+		tr.appendChild(th);
 		var td0 = document.createElement('img');
 		td0.setAttribute("src",list.avatar_url);
 		td0.setAttribute("style","width:50px; height=50px");
+		td0.setAttribute("href",list.html_url);
 		tr1.appendChild(td0);
 
 		var td1 = document.createElement('td');
@@ -59,10 +71,58 @@ function execute()
 		var td4 = document.createElement('td');
 		td4.innerHTML = list.html_url;
 		tr1.appendChild(td4);
-
+		table1.appendChild(tr);
 		table1.appendChild(tr1);
 
 	}
+
+	//following
+											var xhr2 = new XMLHttpRequest();
+											xhr2.open("GET","https://api.github.com/users/"+user+"/following",true);
+											xhr2.onload = function() {
+												var d = xhr2.responseText;
+												console.log(d);
+												data = JSON.parse(d);
+												
+												for(i in data)
+												{
+													followinglist(data[i]);
+												}
+												//addingtoDom(data);
+												}
+											xhr2.send();
+
+												function followinglist(list)
+												{
+													var tr1 = document.createElement('tr');
+
+													var td0 = document.createElement('img');
+													td0.setAttribute("src",list.avatar_url);
+													td0.setAttribute("style","width:50px; height=50px");
+													td0.setAttribute("href",list.html_url);
+													tr1.appendChild(td0);
+
+													var td1 = document.createElement('td');
+													td1.innerHTML = list.login;
+													tr1.appendChild(td1);
+
+													var td2 = document.createElement('td');
+													td2.innerHTML = list.id;
+													tr1.appendChild(td2);
+
+													var td3 = document.createElement('td');
+													td3.innerHTML = list.type;
+													tr1.appendChild(td3);
+
+													var td4 = document.createElement('td');
+													td4.innerHTML = list.html_url;
+													tr1.appendChild(td4);
+
+													tablefl.appendChild(tr1);
+
+												}
+	
+
 	function addingtoDom(obj) {
 		
 		//title
@@ -124,9 +184,11 @@ function execute()
 
 	}
 
-					// MOdal code
+
+					// followers modal
 		
 								var modal = document.getElementById("myModal");
+
 
 								// Get the button that opens the modal
 								var btn = document.getElementById("myBtn");
@@ -158,7 +220,6 @@ function execute()
 									function followerslist(list)
 									{
 										var tr1 = document.createElement('tr');
-
 										var td0 = document.createElement('img');
 										td0.setAttribute("src",list.avatar_url);
 										td0.setAttribute("style","width:50px; height=50px");
@@ -197,7 +258,83 @@ function execute()
 							modal.style.display = "none";
 							}
 						}
-	
+
+
+
+							// following modal
+
+											var modal1= document.getElementById("myModal1");
+
+											// Get the button that opens the modal
+											var btn = document.getElementById("myBtn1");
+											
+											// Get the <span> element that closes the modal
+											var span = document.getElementsByClassName("close")[0];
+											
+											// When the user clicks the button, open the modal 
+										btn.onclick = function() 
+										{
+											modal1.style.display = "block";
+
+
+											var xhr1 = new XMLHttpRequest();
+											xhr1.open("GET","https://api.github.com/users/"+user+"/following",true);
+											xhr1.onload = function() {
+												var d = xhr1.responseText;
+												console.log(d);
+												data = JSON.parse(d);
+												
+												for(i in data)
+												{
+													followinglist(data[i]);
+												}
+												//addingtoDom(data);
+												}
+											xhr1.send();
+
+												function followinglist(list)
+												{
+													var tr1 = document.createElement('tr');
+
+													var td0 = document.createElement('img');
+													td0.setAttribute("src",list.avatar_url);
+													td0.setAttribute("style","width:50px; height=50px");
+													tr1.appendChild(td0);
+
+													var td1 = document.createElement('td');
+													td1.innerHTML = list.login;
+													tr1.appendChild(td1);
+
+													var td2 = document.createElement('td');
+													td2.innerHTML = list.id;
+													tr1.appendChild(td2);
+
+													var td3 = document.createElement('td');
+													td3.innerHTML = list.type;
+													tr1.appendChild(td3);
+
+													var td4 = document.createElement('td');
+													td4.innerHTML = list.html_url;
+													tr1.appendChild(td4);
+
+													table3.appendChild(tr1);
+
+												}
+
+											}
+
+
+
+									// When the user clicks on <span> (x), close the modal
+									span.onclick = function() {
+									modal1.style.display = "none";
+									}
+									window.onclick = function(event) {
+										if (event.target == modal1) {
+										modal1.style.display = "none";
+										}
+									}
+						
 	
 	
 	
