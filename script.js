@@ -53,7 +53,7 @@ function execute()
 		var td0 = document.createElement('img');
 		td0.setAttribute("src",list.avatar_url);
 		td0.setAttribute("style","width:50px; height=50px");
-		td0.setAttribute("href",list.html_url);
+		td0.setAttribute("href",list.html_url); 
 		tr1.appendChild(td0);
 
 		var td1 = document.createElement('td');
@@ -142,7 +142,7 @@ function execute()
 		followers.innerHTML ="Followers: "+obj.followers;
 		//following
 		var following=document.getElementById('following');
-		following.innerHTML ="Followers: "+obj.following;
+		following.innerHTML ="Following: "+obj.following;
 		//bio
 		var bio=document.getElementById('bio');
 		bio.innerHTML =obj.bio;
