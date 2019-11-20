@@ -7,8 +7,8 @@
 
     <!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="/css/style.css">
-	<link rel="stylesheet" href="/bootstrap/css/bootstrap.css">
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" > -->
+	<!-- <link rel="stylesheet" href="/bootstrap/css/bootstrap.css"> -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
 	<link href="https://bootswatch.com/4/simplex/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
@@ -61,10 +61,10 @@
 					<a target="_blank" class="btn btn-primary btn-block viewbtn pbc" id="pbutton" href="${user.html_url}">View Profile</a>
 				</div>
 				<div class="">
-					<h3 class="badges" ><button class="badge badge-success"  id="myBtn"><span id="followers">Followers:</span></button></h3>
-					<h3 class="badges" ><span class="badge badge-primary" id="pr">Public Repos: </span></h3>
+					<h3 class="badges" ><button class="badge badge-pill badge-success"  id="myBtn"><span id="followers">Followers:</span></button></h3>
+					<h3 class="badges" ><span class="badge badge-pill badge-primary" id="pr">Public Repos: </span></h3>
 					<!-- <h3 class="badges" ><span class="badge badge-info" id="following">Following: ${user.following}</span></h3> -->
-					<h3 class="badges"><button class="badge badge-info"  id="myBtn1"><span id="following">Following:</span></button></h3>
+					<h3 class="badges"><button class="badge badge-pill badge-info"  id="myBtn1"><span id="following">Following:</span></button></h3>
 					<br><br>
 					<ul class="list-group">
 						<li class="list-group-item" id="bio">Bio: ${user.bio}</li>
@@ -78,7 +78,7 @@
 
 	</div> 
 	<div class="row">
-			<div class="col-3">
+			<div class="col-2.5">
 					<h1>Recent Search</h1>
 			<table id="table" style="border: 1px solid #c6c6c6; text-align: center;">
 				<tr>
@@ -90,7 +90,7 @@
 				</tr>
 			</table>
 			</div>
-			<div class="col-5">
+			<div class="col-3">
 			<h1>Followers list</h1>
 			<table id="table1" style="border: 2px solid #c6c6c6; text-align: center;">
 				<tr>
@@ -102,7 +102,7 @@
 				</tr>
 			</table>
 			</div>
-			<div class="col-4">
+			<div class="col-3">
 				<h1>Following list</h1>
 				<table id="tablefl" style="border: 2px solid #c6c6c6; text-align: center;">
 					<tr>
@@ -114,6 +114,32 @@
 					</tr>
 				</table>
 				</div>
+				<div class="col-3">
+					<h1>REPOSITORIES</h1>
+					<table id="tablerepo" style="border: 2px solid #c6c6c6; text-align: center;">
+						<tr>
+							<th>NAME</th>
+							<th>LINK</th>
+							
+						</tr>
+						<div class="card">
+							<div class="row">
+							  <div class="col-md-4">
+								<p id="rname">${repo.name}</p>      
+								  <!-- : ${repo.description} -->
+							  </div>
+							  <div class="col-md-6">
+								<span class="badge badge-pill badge-dark" id="forks">Forks: ${repo.forks_count}</span>
+								
+								<span class="badge badge-pill badge-success" id="stars">Stars: ${repo.stargazers_count}</span>
+							  </div>
+							  <div class="col-md-2">
+								<a href="${repo.html_url}" target="_blank" class="btn btn-dark" id="repolink">Repo Page</a>
+							  </div>
+							</div>
+						  </div>
+					</table>
+					</div>
 	</div>
 	
 
@@ -162,6 +188,9 @@
 				</table>	
 			</div>
 			</div>
+
+			
+
 
 <script type="text/javascript" src="script.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>

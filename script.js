@@ -7,10 +7,12 @@ function execute()
 	var table2 = document.getElementById('table2');
 	var table3 = document.getElementById('table3');
 	var tablefl = document.getElementById('tablefl');
+	var tablerp = document.getElementById('tablerepo');
 	document.getElementById("table2").innerHTML = "";
 	document.getElementById("table3").innerHTML = "";
 	document.getElementById("tablefl").innerHTML = "";
 	document.getElementById("table1").innerHTML = "";
+	document.getElementById("tablerepo").innerHTML = "";
 	var xhr = new XMLHttpRequest();
 	xhr.open("GET","https://api.github.com/users/"+user,true);
 	xhr.onload = function() {
@@ -29,10 +31,10 @@ function execute()
 
 	//followers 
 	var xhr1 = new XMLHttpRequest();
-	xhr1.open("GET","https://api.github.com/users/"+user+"/followers",true);
+	xhr1.open("GET","https://api.github.com/users/"+user+"/followers?per_page=50",true);
 	xhr1.onload = function() {
 		var d = xhr1.responseText;
-		console.log(d);
+		// console.log(d);
 		data = JSON.parse(d);
 		
 		for(i in data)
@@ -78,14 +80,15 @@ function execute()
 
 	//following
 											var xhr2 = new XMLHttpRequest();
-											xhr2.open("GET","https://api.github.com/users/"+user+"/following",true);
+											xhr2.open("GET","https://api.github.com/users/"+user+"/following?per_page=50",true);
 											xhr2.onload = function() {
 												var d = xhr2.responseText;
-												console.log(d);
+												// console.log(d);
 												data = JSON.parse(d);
 												
 												for(i in data)
 												{
+													
 													followinglist(data[i]);
 												}
 												//addingtoDom(data);
@@ -203,10 +206,10 @@ function execute()
 
 
 								var xhr1 = new XMLHttpRequest();
-								xhr1.open("GET","https://api.github.com/users/"+user+"/followers",true);
+								xhr1.open("GET","https://api.github.com/users/"+user+"/followers?per_page=50",true);
 								xhr1.onload = function() {
 									var d = xhr1.responseText;
-									console.log(d);
+									// console.log(d);
 									data = JSON.parse(d);
 									
 									for(i in data)
@@ -278,10 +281,10 @@ function execute()
 
 
 											var xhr1 = new XMLHttpRequest();
-											xhr1.open("GET","https://api.github.com/users/"+user+"/following",true);
+											xhr1.open("GET","https://api.github.com/users/"+user+"/following?per_page=50",true);
 											xhr1.onload = function() {
 												var d = xhr1.responseText;
-												console.log(d);
+												// console.log(d);
 												data = JSON.parse(d);
 												
 												for(i in data)
@@ -335,7 +338,53 @@ function execute()
 										}
 									}
 						
-	
+
+
+
+								
+
+									// respositeries
+
+
+
+
+									var xhr3 = new XMLHttpRequest();
+									xhr3.open("GET","https://api.github.com/users/"+user+"/repos",true);
+									xhr3.onload = function() {
+										var d = xhr3.responseText;
+										// console.log(d);
+										data = JSON.parse(d);
+										console.log(data);
+										for(i in data)
+										{
+											// console.log(data[i]);
+
+											reposlist(data[i]);
+											
+										}
+										//addingtoDom(data);
+								}
+									xhr3.send();
+
+									function reposlist(list)
+									{
+
+
+										var rn=document.getElementById('rname');
+										rn.innerHTML =list.name;
+										
+										var forks=document.getElementById('forks');
+										forks.innerHTML ="Forks: "+list.forks_count;
+										
+										var stars=document.getElementById('stars');
+										stars.innerHTML ="Stars: "+list.stargazers_count;
+
+										var rlink=document.getElementById('repolink');
+										rlink.setAttribute("href",list.html_url);
+
+
+									}
+									
 	
 	
 
