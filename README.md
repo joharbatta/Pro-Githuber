@@ -1,4 +1,4 @@
-# Github-API-Integration-JS
+# Pro-Githuber
 
  Github Data Fetching Using Ajax & JavaScript | Pro-Githuber | JOHAR BATTA
 
