@@ -8,3 +8,12 @@
 <a href="https://joharbatta.github.io/Github-API-Integration-JS/">TRY OUT!<a>
 ## HOME PAGE
  ![](Screenshots/main.png)
+ 
+ 
+# Technologies Used -
+## HTML
+## CSS
+## BOOTSTRAP
+## JAVASCRIPT
+
+## AJAX
