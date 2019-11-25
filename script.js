@@ -2,19 +2,22 @@ function execute()
 {
 	var user = document.getElementById("searchUser").value;
 	var data=[];
+	var key="?client_id=6ce56aa9220d97a25db6&client_secret=3135ef1b21ce53e81e9b5f450df007873cae6669";
 	var table = document.getElementById('table');
 	var table1 = document.getElementById('table1');
 	var table2 = document.getElementById('table2');
 	var table3 = document.getElementById('table3');
+	var table4 = document.getElementById('table4');
 	var tablefl = document.getElementById('tablefl');
 	var tablerp = document.getElementById('tablerepo');
 	document.getElementById("table2").innerHTML = "";
 	document.getElementById("table3").innerHTML = "";
 	document.getElementById("tablefl").innerHTML = "";
 	document.getElementById("table1").innerHTML = "";
+	document.getElementById("table4").innerHTML = "";
 	document.getElementById("tablerepo").innerHTML = "";
 	var xhr = new XMLHttpRequest();
-	xhr.open("GET","https://api.github.com/users/"+user,true);
+	xhr.open("GET","https://api.github.com/users/"+user+key,true);
 	xhr.onload = function() {
 		var d = xhr.responseText;
 		//console.log(d);
@@ -31,11 +34,12 @@ function execute()
 
 	//followers 
 	var xhr1 = new XMLHttpRequest();
-	xhr1.open("GET","https://api.github.com/users/"+user+"/followers?per_page=50",true);
+	xhr1.open("GET","https://api.github.com/users/"+user+"/followers?per_page=50"+key,true);
 	xhr1.onload = function() {
 		var d = xhr1.responseText;
-		// console.log(d);
+		//console.log(d);
 		data = JSON.parse(d);
+		//console.log(data);
 		
 		for(i in data)
 		{
@@ -80,7 +84,7 @@ function execute()
 
 	//following
 											var xhr2 = new XMLHttpRequest();
-											xhr2.open("GET","https://api.github.com/users/"+user+"/following?per_page=50",true);
+											xhr2.open("GET","https://api.github.com/users/"+user+"/following?per_page=50"+key,true);
 											xhr2.onload = function() {
 												var d = xhr2.responseText;
 												// console.log(d);
@@ -197,7 +201,7 @@ function execute()
 								var btn = document.getElementById("myBtn");
 								
 								// Get the <span> element that closes the modal
-								var span = document.getElementsByClassName("close")[0];
+								var span = document.getElementsByClassName("close1")[0];
 								
 								// When the user clicks the button, open the modal 
 							btn.onclick = function() 
@@ -206,7 +210,7 @@ function execute()
 
 
 								var xhr1 = new XMLHttpRequest();
-								xhr1.open("GET","https://api.github.com/users/"+user+"/followers?per_page=50",true);
+								xhr1.open("GET","https://api.github.com/users/"+user+"/followers?per_page=50"+key,true);
 								xhr1.onload = function() {
 									var d = xhr1.responseText;
 									// console.log(d);
@@ -281,7 +285,7 @@ function execute()
 
 
 											var xhr1 = new XMLHttpRequest();
-											xhr1.open("GET","https://api.github.com/users/"+user+"/following?per_page=50",true);
+											xhr1.open("GET","https://api.github.com/users/"+user+"/following?per_page=100"+key,true);
 											xhr1.onload = function() {
 												var d = xhr1.responseText;
 												// console.log(d);
@@ -349,7 +353,7 @@ function execute()
 
 
 									var xhr3 = new XMLHttpRequest();
-									xhr3.open("GET","https://api.github.com/users/"+user+"/repos",true);
+									xhr3.open("GET","https://api.github.com/users/"+user+"/repos"+key,true);
 									xhr3.onload = function() {
 										var d = xhr3.responseText;
 										// console.log(d);
@@ -357,7 +361,7 @@ function execute()
 										console.log(data);
 										for(i in data)
 										{
-											// console.log(data[i]);
+											//console.log(data[i]);
 
 											reposlist(data[i]);
 											
@@ -372,6 +376,7 @@ function execute()
 
 										var rn=document.getElementById('rname');
 										rn.innerHTML =list.name;
+										console.log(list.name);
 										
 										var forks=document.getElementById('forks');
 										forks.innerHTML ="Forks: "+list.forks_count;
@@ -381,10 +386,86 @@ function execute()
 
 										var rlink=document.getElementById('repolink');
 										rlink.setAttribute("href",list.html_url);
-
+										
 
 									}
 									
+
+
+										// pr modal
+
+										var modal2= document.getElementById("myModal2");
+
+										// Get the button that opens the modal
+										var btn = document.getElementById("myBtn2");
+										
+										// Get the <span> element that closes the modal
+										var span = document.getElementsByClassName("close2")[0];
+										
+										// When the user clicks the button, open the modal 
+									btn.onclick = function() 
+									{
+										modal2.style.display = "block";
+
+
+										var xhr1 = new XMLHttpRequest();
+										xhr1.open("GET","https://api.github.com/users/"+user+"/repos"+key,true);
+										xhr1.onload = function() {
+											var d = xhr1.responseText;
+											// console.log(d);
+											data = JSON.parse(d);
+											
+											for(i in data)
+											{
+												repolist(data[i]);
+											}
+											//addingtoDom(data);
+											}
+										xhr1.send();
+
+											function repolist(list)
+											{
+												var tr1 = document.createElement('tr');
+
+												// var td0 = document.createElement('img');
+												// td0.setAttribute("src",list.avatar_url);
+												// td0.setAttribute("style","width:50px; height=50px");
+												// tr1.appendChild(td0);
+
+												var td1 = document.createElement('td');
+												td1.innerHTML = list.name;
+												tr1.appendChild(td1);
+
+												var td2 = document.createElement('td');
+												td2.innerHTML = list.stargazers_count;
+												tr1.appendChild(td2);
+
+												var td3 = document.createElement('td');
+												td3.innerHTML = list.forks_count;
+												tr1.appendChild(td3);
+
+												var td4 = document.createElement('td');
+												td4.innerHTML = list.html_url;
+												tr1.appendChild(td4);
+
+												table4.appendChild(tr1);
+
+											}
+
+										}
+
+
+
+								// When the user clicks on <span> (x), close the modal
+								span.onclick = function() {
+								modal2.style.display = "none";
+								}
+								window.onclick = function(event) {
+									if (event.target == modal1) {
+									modal2.style.display = "none";
+									}
+								}
+					
 	
 	
 

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
 	
 	<!-- <link rel="stylesheet" href="/bootstrap/css/bootstrap.css"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
@@ -60,11 +60,11 @@
 			<div class="row">
 				<div class="">
 					<img class="thumbnail avatar" id="dp" src="${user.avatar_url}">
-					<a target="_blank" class="btn btn-primary btn-block viewbtn pbc" id="pbutton" href="${user.html_url}">View Profile</a>
+					<a target="_blank" class="btn btn-primary btn-block" id="pbutton" href="${user.html_url}">View Profile</a>
 				</div>
 				<div class="">
 					<h3 class="badges" ><button class="badge badge-pill badge-success"  id="myBtn"><span id="followers">Followers:</span></button></h3>
-					<h3 class="badges" ><span class="badge badge-pill badge-primary" id="pr">Public Repos: </span></h3>
+					<h3 class="badges" ><button class="badge badge-pill badge-primary" id="myBtn2"><span id="pr">Public Repos: </span></button></h3>
 					<!-- <h3 class="badges" ><span class="badge badge-info" id="following">Following: ${user.following}</span></h3> -->
 					<h3 class="badges"><button class="badge badge-pill badge-info"  id="myBtn1"><span id="following">Following:</span></button></h3>
 					<br><br>
@@ -136,7 +136,7 @@
 								<span class="badge badge-pill badge-success" id="stars">Stars: ${repo.stargazers_count}</span>
 							  </div>
 							  <div class="col-md-2">
-								<a href="${repo.html_url}" target="_blank" class="btn btn-dark" id="repolink">Repo Page</a>
+								<a href="" target="_blank" class="btn btn-dark" id="repolink">Repo Page</a>
 							  </div>
 							</div>
 						  </div>
@@ -153,7 +153,7 @@
 				
 			<div class="modal-header">
 			
-				<h1 id="mhead"> FOLLOWERS  <span class="close">&times;</span> </h1>	
+				<h1 id="mhead"> FOLLOWERS  <span class="close1">&times;</span> </h1>	
 			
 			</div>
 			<table id="table2" style="border: 2px solid #c6c6c6; text-align: center;">
@@ -190,7 +190,28 @@
 				</table>	
 			</div>
 			</div>
+ <!-- pr modal -->
+			<div id="myModal2" class="modal">
 
+				<!-- Modal content -->
+				<div class="modal-content">
+						
+					<div class="modal-header">
+					
+						<h1 id="mhead"> PUBLIC REPOSITORIES <span class="close2">&times;</span> </h1>	
+					
+					</div>
+					<table id="table4" style="border: 2px solid #c6c6c6; text-align: center;">
+						<tr>
+							<th>NAME</th>
+							<th>STARS</th>
+							<th>FROKS</th>
+						
+							<th>Url</th>
+						</tr>
+					</table>	
+				</div>
+				</div>
 			
 
 
