@@ -22,7 +22,6 @@ function execute()
 		var d = xhr.responseText;
 		//console.log(d);
 		data = JSON.parse(d);
-		
 		// for(i in data)
 		// {
 		// 	addingtoDom(data[i]);
@@ -46,7 +45,7 @@ function execute()
 			followerslist(data[i]);
 		}
 		//addingtoDom(data);
- }
+ 		}
 	xhr1.send();
 
 	function followerslist(list)
@@ -54,7 +53,7 @@ function execute()
 		var tr = document.createElement('tr');
 		var tr1 = document.createElement('tr');
 		var th=document.createElement('th');
-		th.innerHTML="PHOTO";
+		
 		tr.appendChild(th);
 		var td0 = document.createElement('img');
 		td0.setAttribute("src",list.avatar_url);
@@ -75,7 +74,13 @@ function execute()
 		tr1.appendChild(td3);
 
 		var td4 = document.createElement('td');
-		td4.innerHTML = list.html_url;
+		
+		var a=document.createElement('a');
+		a.setAttribute("href",list.html_url);
+		a.setAttribute("target","_blank");
+		a.innerHTML = list.html_url;
+		td4.appendChild(a);
+		
 		tr1.appendChild(td4);
 		table1.appendChild(tr);
 		table1.appendChild(tr1);
@@ -122,7 +127,12 @@ function execute()
 													tr1.appendChild(td3);
 
 													var td4 = document.createElement('td');
-													td4.innerHTML = list.html_url;
+													
+													var a=document.createElement('a');
+												a.setAttribute("href",list.html_url);
+												a.setAttribute("target","_blank");
+												a.innerHTML = list.html_url;
+												td4.appendChild(a);
 													tr1.appendChild(td4);
 
 													tablefl.appendChild(tr1);
@@ -184,7 +194,7 @@ function execute()
 		tr1.appendChild(td3);
 
 		var td4 = document.createElement('td');
-		td4.innerHTML = obj.html_url;
+		
 		tr1.appendChild(td4);
 
 		table.appendChild(tr1);
@@ -195,7 +205,6 @@ function execute()
 					// followers modal
 		
 								var modal = document.getElementById("myModal");
-
 
 								// Get the button that opens the modal
 								var btn = document.getElementById("myBtn");
@@ -230,6 +239,7 @@ function execute()
 										var td0 = document.createElement('img');
 										td0.setAttribute("src",list.avatar_url);
 										td0.setAttribute("style","width:50px; height=50px");
+										
 										tr1.appendChild(td0);
 
 										var td1 = document.createElement('td');
@@ -245,7 +255,12 @@ function execute()
 										tr1.appendChild(td3);
 
 										var td4 = document.createElement('td');
-										td4.innerHTML = list.html_url;
+										
+										var a=document.createElement('a');
+												a.setAttribute("href",list.html_url);
+												a.setAttribute("target","_blank");
+												a.innerHTML = list.html_url;
+												td4.appendChild(a);
 										tr1.appendChild(td4);
 
 										table2.appendChild(tr1);
@@ -307,6 +322,7 @@ function execute()
 													td0.setAttribute("src",list.avatar_url);
 													td0.setAttribute("style","width:50px; height=50px");
 													tr1.appendChild(td0);
+												
 
 													var td1 = document.createElement('td');
 													td1.innerHTML = list.login;
@@ -321,11 +337,33 @@ function execute()
 													tr1.appendChild(td3);
 
 													var td4 = document.createElement('td');
-													td4.innerHTML = list.html_url;
+													
+													var a=document.createElement('a');
+													a.setAttribute("href",list.html_url);
+													a.setAttribute("target","_blank");
+													a.innerHTML = list.html_url;
+													td4.appendChild(a);
 													tr1.appendChild(td4);
 
-													table3.appendChild(tr1);
+													var td4=document.createElement('td');
+													var button = document.createElement('input');
 
+															// SET INPUT ATTRIBUTE 'type' AND 'value'.
+													button.setAttribute('type', 'button');
+													button.setAttribute('onclick',function() {
+														modal1.style.display = "none";
+														});
+													button.setAttribute("class","button button1");
+													// var span=document.getElementById("more");
+					
+												
+													td4.appendChild(button);
+													tr1.appendChild(button);
+													// console.log(td4);
+
+													table3.appendChild(tr1);	
+													// tr1.addEventListener("dblclick",onclickm(td1.innerHTML));
+													
 												}
 
 											}
@@ -371,7 +409,7 @@ function execute()
 									xhr3.send();
 
 									function reposlist(list)
-									{
+									{  
 
 
 										var rn=document.getElementById('rname');
@@ -390,8 +428,6 @@ function execute()
 
 									}
 									
-
-
 										// pr modal
 
 										var modal2= document.getElementById("myModal2");
@@ -433,6 +469,7 @@ function execute()
 												// tr1.appendChild(td0);
 
 												var td1 = document.createElement('td');
+												td1.setAttribute("style","font-size:30px;")
 												td1.innerHTML = list.name;
 												tr1.appendChild(td1);
 
@@ -445,7 +482,11 @@ function execute()
 												tr1.appendChild(td3);
 
 												var td4 = document.createElement('td');
-												td4.innerHTML = list.html_url;
+												var a=document.createElement('a');
+												a.setAttribute("href",list.html_url);
+												a.setAttribute("target","_blank");
+												a.innerHTML = list.html_url;
+												td4.appendChild(a);
 												tr1.appendChild(td4);
 
 												table4.appendChild(tr1);
@@ -469,18 +510,14 @@ function execute()
 	
 	
 
-
-
-
-
-		
-
-
-
-
-
 }
 
+function onclickm(x)
+{
+	var val=x;
+	console.log(val);
+
+}
 
 
 

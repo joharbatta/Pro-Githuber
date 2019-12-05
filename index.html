@@ -3,26 +3,27 @@
 <head>
 	<title>PRO GITHUBER</title>
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0" />
 
    <!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="CSS/style.css" type="text/css">
+	<link rel="stylesheet" href="css/style.css" type="text/css">
 	
 	<!-- <link rel="stylesheet" href="/bootstrap/css/bootstrap.css"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
 	<link href="https://bootswatch.com/4/simplex/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body oncontextmenu="return false">
+<body oncontextmenu="return false" background-color="grey">
+	
 	<nav class="navbar">
 
 		
-		<a class="navbar-brand" href="#">PRO GITHUBER</a>
+		<a class="navbar-brand mx-auto" href="#">PRO GITHUBER</a>
 		 
 	   </nav>
 
 	   <script type="text/javascript" src="typed.js"></script>
-	   <div class="" id="con">
+	   <div class="btn-dark">
 		    <h2 class="type"></h2>
                                       <script>
                                      var typed=new Typed(".type",{
@@ -40,26 +41,29 @@
                                       loop:true,
 
                                     })
-                                     </script>
-		
+									 </script>
+									 
+		</div>
+		<section div class=" p-lg-5 d-flex-row align-items-center">
 		<p class="lead">Enter a username to fetch all you need!</p>
 		<!-- <input type="text" id="searchUser" class="searchbar" placeholder="Github Username...">
 		<input type="button" id="searchB" value="SEARCH" onclick="execute()"> -->
-		<div class="example" style="margin:auto;max-width:300px">
-			<input type="text" id="searchUser" class="searchbar" placeholder="Search.." name="search2">
+		<div class="example" id="baar">
+			<input type="text" id="searchUser"  placeholder="Search.." name="search2">
 			<button type="submit" id="searchB" value="SEARCH" onclick="execute()"><i class="fa fa-search"></i></button>
-		  </div>
+		</div>
+		</section>
 		
-	  </div>
+	  
 
 	  <div class="card">
 		<div class="card-header">
-			<h3 class="card-title" id="title">${user.name}</h3>
+			<h3 class="card-title" id="title"></h3>
 		</div>
 		<div class="card-body ">
 			<div class="row">
 				<div class="">
-					<img class="thumbnail avatar" id="dp" src="${user.avatar_url}">
+					<img class="thumbnail avatar" id="dp" src="thug.jpg">
 					<a target="_blank" class="btn btn-primary btn-block" id="pbutton" href="${user.html_url}">View Profile</a>
 				</div>
 				<div class="">
@@ -69,9 +73,9 @@
 					<h3 class="badges"><button class="badge badge-pill badge-info"  id="myBtn1"><span id="following">Following:</span></button></h3>
 					<br><br>
 					<ul class="list-group">
-						<li class="list-group-item" id="bio">Bio: ${user.bio}</li>
-						<li class="list-group-item" id="company">Company: ${user.company}</li>
-						<li class="list-group-item" id="location">Location: ${user.location}</li>
+						<li class="list-group-item" id="bio">Bio:</li>
+						<li class="list-group-item" id="company">Company:</li>
+						<li class="list-group-item" id="location">Location:</li>
 					
 					</ul>
 				</div>
@@ -79,8 +83,9 @@
 		</div>
 
 	</div> 
+	<div class="container-fluid px-5 py-5">
 	<div class="row">
-			<div class="col-2.5">
+			<div class="col-md-2.5">
 					<h1>Recent Search</h1>
 			<table id="table" style="border: 1px solid #c6c6c6; text-align: center;">
 				<tr>
@@ -92,7 +97,7 @@
 				</tr>
 			</table>
 			</div>
-			<div class="col-3">
+			<div class="col-md-3 mx-5">
 			<h1>Followers list</h1>
 			<table id="table1" style="border: 2px solid #c6c6c6; text-align: center;">
 				<tr>
@@ -104,7 +109,7 @@
 				</tr>
 			</table>
 			</div>
-			<div class="col-3">
+			<div class="col-md-3 mx-5">
 				<h1>Following list</h1>
 				<table id="tablefl" style="border: 2px solid #c6c6c6; text-align: center;">
 					<tr>
@@ -116,24 +121,20 @@
 					</tr>
 				</table>
 				</div>
-				<div class="col-3">
+				<div class="col-md-2">
 					<h1>REPOSITORIES</h1>
 					<table id="tablerepo" style="border: 2px solid #c6c6c6; text-align: center;">
-						<tr>
-							<th>NAME</th>
-							<th>LINK</th>
-							
-						</tr>
+						
 						<div class="card">
 							<div class="row">
 							  <div class="col-md-4">
-								<p id="rname">${repo.name}</p>      
+								<p id="rname">Name</p>      
 								  <!-- : ${repo.description} -->
 							  </div>
 							  <div class="col-md-6">
-								<span class="badge badge-pill badge-dark" id="forks">Forks: ${repo.forks_count}</span>
+								<span class="badge badge-pill badge-dark" id="forks">Forks:</span>
 								
-								<span class="badge badge-pill badge-success" id="stars">Stars: ${repo.stargazers_count}</span>
+								<span class="badge badge-pill badge-success" id="stars">Stars:</span>
 							  </div>
 							  <div class="col-md-2">
 								<a href="" target="_blank" class="btn btn-dark" id="repolink">Repo Page</a>
@@ -143,6 +144,7 @@
 					</table>
 					</div>
 	</div>
+</div>
 	
 
 		<!-- The Modal -->
@@ -182,6 +184,7 @@
 				<table id="table3" style="border: 2px solid #c6c6c6; text-align: center;">
 					<tr>
 						<th>Image</th>
+						<th><span class="badge badge-pill badge-dark" id="more">MORE</span></th>
 						<th>Login</th>
 						<th>Id</th>
 						<th>Type</th>
@@ -210,6 +213,7 @@
 							<th>Url</th>
 						</tr>
 					</table>	
+				</div>
 				</div>
 				</div>
 			
