@@ -3,6 +3,11 @@
     font-size: 30px !important;
     
 }
+body{
+  background-image: url("backgit.jpg");
+
+}
+
 .type
 {
   margin-left: 36%;
@@ -68,17 +73,24 @@ body
     height:300px;
     margin-bottom: 20px;
 }
-
+.card{
+  background-image: url("backgit.jpg");
+  border: none !important;
+}
 .card-body
 {
+ 
     margin-left: 30%;
 }
 .card-header
 {
+  border: none !important;
+  color: white;
   margin-top: 2em;
     text-transform: uppercase;
     text-align: center;
 }
+
 #con
 {
 margin-right:30%;

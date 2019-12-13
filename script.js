@@ -20,7 +20,7 @@ function execute()
 	xhr.open("GET","https://api.github.com/users/"+user+key,true);
 	xhr.onload = function() {
 		var d = xhr.responseText;
-		//console.log(d);
+		console.log(d);
 		data = JSON.parse(d);
 		// for(i in data)
 		// {
@@ -144,7 +144,7 @@ function execute()
 		
 		//title
 		var title=document.getElementById('title');
-		title.innerHTML =obj.login;
+		title.innerHTML =obj.name;
 		//dp
 		var dp=document.getElementById('dp');
 		dp.setAttribute("src",obj.avatar_url);
@@ -348,15 +348,15 @@ function execute()
 													var td4=document.createElement('td');
 													var button = document.createElement('input');
 
-															// SET INPUT ATTRIBUTE 'type' AND 'value'.
+														// SET INPUT ATTRIBUTE 'type' AND 'value'.
 													button.setAttribute('type', 'button');
-													button.setAttribute('onclick',function() {
-														modal1.style.display = "none";
-														});
+													button.setAttribute('onclick',onclickm(td1.innerHTML));
+
+													var j=document.querySelector
+
 													button.setAttribute("class","button button1");
 													// var span=document.getElementById("more");
 					
-												
 													td4.appendChild(button);
 													tr1.appendChild(button);
 													// console.log(td4);
@@ -514,8 +514,8 @@ function execute()
 
 function onclickm(x)
 {
-	var val=x;
-	console.log(val);
+	
+	console.log('onclickm',x);
 
 }
 

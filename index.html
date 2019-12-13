@@ -3,10 +3,11 @@
 <head>
 	<title>PRO GITHUBER</title>
 	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=0" />
+	<meta name="viewport" content="width=device-width",initial-scale=1,shrink-to-fit=no/>
 
    <!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="CSS/style.css" type="text/css">
+	<link rel= "stylesheet" href="style.css" type="text/css">
+	<link rel="stylesheet" href="style.css" type="text/css">
 	
 	<!-- <link rel="stylesheet" href="/bootstrap/css/bootstrap.css"> -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" >
@@ -16,10 +17,7 @@
 <body oncontextmenu="return false" background-color="grey">
 	
 	<nav class="navbar">
-
-		
-		<a class="navbar-brand mx-auto" href="#">PRO GITHUBER</a>
-		 
+		<a class="navbar-brand mx-auto" href="#">PRO GITHUBER</a>	 
 	   </nav>
 
 	   <script type="text/javascript" src="typed.js"></script>
@@ -58,12 +56,13 @@
 
 	  <div class="card">
 		<div class="card-header">
-			<h3 class="card-title" id="title"></h3>
+			<p class="card-title" id="title" style="
+			font-size: 40px;"></p>
 		</div>
 		<div class="card-body ">
 			<div class="row">
 				<div class="">
-					<img class="thumbnail avatar" id="dp" src="download.png">
+					<img class="thumbnail avatar" id="dp" src="sidhu.png">
 					<a target="_blank" class="btn btn-primary btn-block" id="pbutton" href="${user.html_url}">View Profile</a>
 				</div>
 				<div class="">
@@ -86,8 +85,8 @@
 	<div class="container-fluid px-5 py-5">
 	<div class="row">
 			<div class="col-md-2.5">
-					<h1>Recent Search</h1>
-			<table id="table" style="border: 1px solid #c6c6c6; text-align: center;">
+					<h1 style="color: beige;">Recent Search</h1>
+			<table id="table" style="text-align: center;color: white;">
 				<tr>
 					<th>Image</th>
 					<th>Login</th>
@@ -98,37 +97,23 @@
 			</table>
 			</div>
 			<div class="col-md-3 mx-5">
-			<h1>Followers list</h1>
-			<table id="table1" style="border: 2px solid #c6c6c6; text-align: center;">
-				<tr>
-					<th>Image</th>
-					<th>Login</th>
-					<th>Id</th>
-					<th>Type</th>
-					<th>Url</th>
-				</tr>
+			<h1 style="color: beige;">Followers list</h1>
+			<table id="table1" style="text-align: center ;color: white;">
 			</table>
 			</div>
 			<div class="col-md-3 mx-5">
-				<h1>Following list</h1>
-				<table id="tablefl" style="border: 2px solid #c6c6c6; text-align: center;">
-					<tr>
-						<th>Image</th>
-						<th>Login</th>
-						<th>Id</th>
-						<th>Type</th>
-						<th>Url</th>
-					</tr>
+				<h1 style="color: beige;">Following list</h1>
+				<table id="tablefl" style="text-align: center; color: white;">
 				</table>
 				</div>
 				<div class="col-md-2">
-					<h1>REPOSITORIES</h1>
-					<table id="tablerepo" style="border: 2px solid #c6c6c6; text-align: center;">
+					<h1 style="color: beige;">REPOSITORIES</h1>
+					<table id="tablerepo" style=" text-align: center;color: white;">
 						
 						<div class="card">
 							<div class="row">
 							  <div class="col-md-4">
-								<p id="rname">Name</p>      
+								<p id="rname" style="text-align: center;color: white;">Name</p>      
 								  <!-- : ${repo.description} -->
 							  </div>
 							  <div class="col-md-6">
