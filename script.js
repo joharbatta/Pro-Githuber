@@ -1,3 +1,4 @@
+//to execute the code
 function execute()
 {
 	var user = document.getElementById("searchUser").value;
@@ -47,7 +48,7 @@ function execute()
 		//addingtoDom(data);
  		}
 	xhr1.send();
-
+// get the followers list
 	function followerslist(list)
 	{
 		var tr = document.createElement('tr');
@@ -139,7 +140,7 @@ function execute()
 
 												}
 	
-
+//added to dom
 	function addingtoDom(obj) {
 		
 		//title
@@ -600,5 +601,38 @@ function onclickm(x)
 
 // }
 
+//C19H3R was here
 
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
+//C19H3R was here
 
